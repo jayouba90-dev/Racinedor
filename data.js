@@ -19,19 +19,19 @@ const SITE = {
 // "image" = le chemin de la photo dans le dossier images.
 const PRODUITS = [
   {
-    nom: "COSSETTE D IGNAME",
+    nom: "COSSETTE D'IGNAME",
     categorie: "Catégorie A",
     prix: 1500,
     unite: "le KG",
-    description: "Décris ici ton produit en une phrase courte.",
+    description: " "Produit de l'année, cultivé localement.".",
     image: "images/produit-1.jpg"
   },
   {
-    nom: "Produit exemple 2",
+    nom: "BOUILLIE BEBE",
     categorie: "Catégorie A",
     prix: 2000,
-    unite: "le sachet",
-    description: "Décris ici ton produit en une phrase courte.",
+    unite: "le kg",
+    description: "bouillie riche composé de maïs de soja de l'arachide facile a digéger.",
     image: "images/produit-2.jpg"
   },
   {
