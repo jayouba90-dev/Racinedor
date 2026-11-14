@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Racine d’Or, produits locaux</title>
+  <meta name="description" content="Racine d’Or vend des produits locaux. Choisissez vos produits et commandez directement sur WhatsApp.">
+  <meta name="theme-color" content="#14532D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- EN-TÊTE -->
+  <header class="entete">
+    <div class="conteneur entete-contenu">
+      <a class="marque" href="#accueil" aria-label="Racine d’Or, retour à l’accueil">
+        <!-- Ton logo : mets un fichier nommé logo.png dans le dossier images -->
+        <img id="logo" src="images/logo.png" alt="" width="44" height="44">
+        <span class="marque-nom">Racine d’Or</span>
+      </a>
+
+      <a class="bouton bouton-plein bouton-entete" data-whatsapp href="#contact">Commander</a>
+
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="#produits">Produits</a>
+        <a href="#commander">Comment commander</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="accueil">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="conteneur hero-contenu">
+        <div class="hero-texte">
+          <h1>Les bons produits de chez nous, directement chez vous.</h1>
+          <p class="hero-intro">Choisissez vos produits, envoyez votre commande sur WhatsApp et nous confirmons avec vous le prix et la livraison.</p>
+          <div class="hero-actions">
+            <a class="bouton bouton-plein" href="#produits">Voir les produits</a>
+            <a class="bouton bouton-contour" data-whatsapp href="#contact">Écrire sur WhatsApp</a>
+          </div>
+        </div>
+
+        <figure class="hero-visuel" id="hero-visuel">
+          <!-- Une belle photo : mets un fichier nommé hero.jpg dans le dossier images -->
+          <img id="hero-image" src="images/hero.jpg" alt="Les produits Racine d’Or" width="800" height="1000">
+        </figure>
+      </div>
+    </section>
+
+    <!-- PRODUITS -->
+    <section class="section" id="produits">
+      <div class="conteneur">
+        <h2>Nos produits</h2>
+        <p class="section-intro">Touchez un produit pour le commander. Une seule étape : le message est déjà écrit pour vous.</p>
+
+        <div class="filtres" id="filtres" role="group" aria-label="Filtrer par catégorie"></div>
+        <div class="grille" id="grille" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- COMMENT COMMANDER -->
+    <section class="section section-claire" id="commander">
+      <div class="conteneur">
+        <h2>Comment commander</h2>
+        <ol class="etapes">
+          <li>
+            <h3>Choisissez vos produits</h3>
+            <p>Parcourez la liste et touchez « Commander sur WhatsApp » sous le produit qui vous plaît.</p>
+          </li>
+          <li>
+            <h3>Envoyez le message</h3>
+            <p>WhatsApp s’ouvre avec votre message déjà prêt. Vous précisez la quantité et votre quartier.</p>
+          </li>
+          <li>
+            <h3>Nous confirmons avec vous</h3>
+            <p>Nous vous répondons pour confirmer le prix final, le moyen de paiement et la livraison.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="section" id="apropos">
+      <div class="conteneur conteneur-etroit">
+        <h2>À propos</h2>
+        <!-- À MODIFIER : remplace ce texte par ta propre histoire -->
+        <p>Racine d’Or propose des produits locaux choisis avec soin. Notre idée est simple : vous permettre de commander facilement des produits de chez nous, sans vous déplacer.</p>
+        <p>Remplacez ce texte par l’histoire de votre boutique : qui vous êtes, d’où viennent vos produits et pourquoi vous les vendez.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CONTACT / PIED DE PAGE -->
+  <footer class="pied" id="contact">
+    <div class="conteneur pied-contenu">
+      <div>
+        <p class="pied-titre">Une question, une commande ?</p>
+        <p class="pied-texte">Écrivez-nous sur WhatsApp, nous répondons dès que possible.</p>
+      </div>
+      <a class="bouton bouton-blanc" data-whatsapp href="#contact">Écrire sur WhatsApp</a>
+    </div>
+    <div class="conteneur pied-bas">
+      <p>© <span id="annee"></span> Racine d’Or. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+/* ============================================================
+   Racine d'Or : style blanc et vert, pensé d'abord pour le téléphone
+   ============================================================ */
+
+:root {
+  --blanc: #ffffff;
+  --vert-fonce: #14532d;
+  --vert: #1f7a3f;
+  --vert-clair: #e6f2e9;
+  --vert-pale: #f4faf5;
+  --encre: #12261a;
+  --gris: #54655a;
+  --bord: #d3e2d7;
+
+  --police-titre: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --police-texte: "Figtree", "Segoe UI", system-ui, sans-serif;
+
+  --rayon: 16px;
+  --largeur: 1120px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 130px; }
+
+body {
+  margin: 0;
+  font-family: var(--police-texte);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--encre);
+  background: var(--blanc);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  color: var(--vert-fonce);
+  line-height: 1.12;
+  margin: 0;
+}
+
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); letter-spacing: -0.015em; }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--vert); }
+
+:focus-visible {
+  outline: 3px solid var(--vert);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.conteneur {
+  width: min(100% - 2rem, var(--largeur));
+  margin-inline: auto;
+}
+.conteneur-etroit { max-width: 720px; }
+
+/* ---------- Boutons ---------- */
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-family: var(--police-texte);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.bouton-plein { background: var(--vert); color: var(--blanc); }
+.bouton-plein:hover { background: var(--vert-fonce); }
+.bouton-contour { border-color: var(--vert); color: var(--vert-fonce); background: transparent; }
+.bouton-contour:hover { background: var(--vert-clair); }
+.bouton-blanc { background: var(--blanc); color: var(--vert-fonce); }
+.bouton-blanc:hover { background: var(--vert-clair); }
+
+/* ---------- En-tête ---------- */
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--blanc);
+  border-bottom: 1px solid var(--bord);
+}
+.entete-contenu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-block: 0.6rem;
+}
+.marque {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.marque img { width: 44px; height: 44px; object-fit: contain; }
+.marque-nom {
+  font-family: var(--police-titre);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--vert-fonce);
+}
+.bouton-entete { min-height: 42px; padding: 0.45rem 1.1rem; font-size: 0.95rem; }
+
+.menu {
+  order: 3;
+  width: 100%;
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding-block: 0.4rem 0.2rem;
+  scrollbar-width: none;
+}
+.menu::-webkit-scrollbar { display: none; }
+.menu a {
+  color: var(--encre);
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  padding-block: 0.3rem;
+}
+.menu a:hover { color: var(--vert); text-decoration: underline; text-underline-offset: 6px; }
+
+@media (min-width: 820px) {
+  html { scroll-padding-top: 90px; }
+  .menu { order: 0; width: auto; margin-left: auto; margin-right: 1rem; overflow: visible; padding: 0; }
+  .entete-contenu { flex-wrap: nowrap; }
+  .marque { margin-right: auto; }
+  .menu { order: 1; }
+  .bouton-entete { order: 2; }
+}
+
+/* ---------- Hero ---------- */
+.hero { padding-block: 2.5rem 3rem; background: var(--blanc); }
+.hero-contenu {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+}
+.hero-intro {
+  font-size: 1.15rem;
+  color: var(--gris);
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.hero-visuel {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--vert-clair);
+}
+.hero-visuel img { width: 100%; height: 100%; object-fit: cover; }
+.hero-visuel.sans-image {
+  display: grid;
+  place-items: center;
+}
+.hero-visuel.sans-image span {
+  font-family: var(--police-titre);
+  font-weight: 700;
+  font-size: clamp(6rem, 20vw, 11rem);
+  color: var(--vert);
+  opacity: 0.35;
+}
+
+@media (min-width: 820px) {
+  .hero { padding-block: 4rem 5rem; }
+  .hero-contenu { grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; }
+  .hero-visuel { aspect-ratio: 4 / 5; }
+}
+
+/* ---------- Sections ---------- */
+.section { padding-block: 3.5rem; }
+.section-claire { background: var(--vert-pale); }
+.section-intro { color: var(--gris); margin-top: 0.75rem; max-width: 36rem; }
+
+/* ---------- Filtres ---------- */
+.filtres { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-block: 1.5rem; }
+.filtre {
+  min-height: 44px;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--bord);
+  background: var(--blanc);
+  color: var(--encre);
+  font-family: var(--police-texte);
+  font-size: 0.98rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.filtre:hover { border-color: var(--vert); }
+.filtre[aria-pressed="true"] {
+  background: var(--vert-fonce);
+  border-color: var(--vert-fonce);
+  color: var(--blanc);
+}
+
+/* ---------- Produits ---------- */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.filtres + .grille { margin-top: 0; }
+
+.carte {
+  display: flex;
+  flex-direction: column;
+  background: var(--blanc);
+  border: 1px solid var(--bord);
+  border-radius: var(--rayon);
+  overflow: hidden;
+}
+.carte-photo {
+  aspect-ratio: 4 / 3;
+  background: var(--vert-clair);
+}
+.carte-photo img { width: 100%; height: 100%; object-fit: cover; }
+.carte-photo.sans-image { display: grid; place-items: center; }
+.carte-photo.sans-image span {
+  font-family: var(--police-titre);
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--vert);
+  opacity: 0.4;
+}
+.carte-corps {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.1rem 1.1rem 1.25rem;
+}
+.carte-categorie { color: var(--gris); font-size: 0.9rem; margin-bottom: 0.2rem; }
+.carte-description { color: var(--gris); font-size: 0.98rem; margin-top: 0.4rem; }
+.carte-prix { margin: auto 0 1rem; padding-top: 0.5rem; color: var(--gris); }
+.carte-prix strong {
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  color: var(--vert-fonce);
+}
+.bouton-carte { width: 100%; }
+
+.vide { color: var(--gris); grid-column: 1 / -1; }
+
+/* ---------- Étapes ---------- */
+.etapes {
+  list-style: none;
+  counter-reset: etape;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+.etapes li { counter-increment: etape; position: relative; padding-left: 3.5rem; }
+.etapes li::before {
+  content: counter(etape);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--vert);
+  color: var(--blanc);
+  font-family: var(--police-titre);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.etapes p { color: var(--gris); margin: 0.3rem 0 0; }
+
+@media (min-width: 820px) {
+  .etapes { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+}
+
+/* ---------- À propos ---------- */
+#apropos h2 { margin-bottom: 1rem; }
+
+/* ---------- Pied de page ---------- */
+.pied { background: var(--vert-fonce); color: var(--blanc); padding-top: 3rem; }
+.pied-contenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding-bottom: 2.5rem;
+}
+.pied-titre {
+  font-family: var(--police-titre);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+.pied-texte { margin: 0; color: #cfe5d5; }
+.pied-bas { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-block: 1.1rem; }
+.pied-bas p { margin: 0; font-size: 0.92rem; color: #cfe5d5; }
+
+@media (min-width: 820px) {
+  .pied-contenu { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+
+/* ---------- Mouvement réduit ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
