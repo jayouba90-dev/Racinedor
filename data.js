@@ -8,7 +8,7 @@ const SITE = {
 
   // Ton numéro WhatsApp, en format international, SANS le + et SANS espaces.
   // Exemple pour le Bénin : 229 + ton numéro  ->  "22901234567"
-  whatsapp: "22900000000",
+  whatsapp: "2290148155345",
 
   devise: "FCFA"
 };
@@ -19,10 +19,10 @@ const SITE = {
 // "image" = le chemin de la photo dans le dossier images.
 const PRODUITS = [
   {
-    nom: "Produit exemple 1",
+    nom: "COSSETTE D IGNAME",
     categorie: "Catégorie A",
     prix: 1500,
-    unite: "le pot",
+    unite: "le KG",
     description: "Décris ici ton produit en une phrase courte.",
     image: "images/produit-1.jpg"
   },
